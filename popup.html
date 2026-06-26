@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starling 目标语言自动勾选</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="title">Starling 目标语言自动勾选</div>
+        <button class="iconBtn" id="openOptions" aria-label="打开设置">⚙</button>
+      </header>
+
+      <section class="card" id="statusCard">
+        <div class="row">
+          <div class="label">当前页面</div>
+          <div class="value" id="pageState">检测中…</div>
+        </div>
+        <div class="row">
+          <div class="label">上次执行</div>
+          <div class="value" id="lastRun">—</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div class="label">预设</div>
+          <select id="presetSelect" class="select"></select>
+        </div>
+        <div class="hint" id="presetHint"></div>
+      </section>
+
+      <section class="card">
+        <label class="toggleRow">
+          <input type="checkbox" id="autoApply" />
+          <span>进入匹配页面后自动应用</span>
+        </label>
+        <label class="toggleRow">
+          <input type="checkbox" id="autoConfirm" />
+          <span>自动点击“确定/保存”</span>
+        </label>
+      </section>
+
+      <button id="applyNow" class="primaryBtn">立即应用到当前页面</button>
+      <div class="error" id="error"></div>
+    </div>
+
+    <script type="module" src="popup.mjs"></script>
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Starling 目标语言自动勾选",
+  "version": "0.1.0",
+  "description": "离线本地扩展：用预设/手动配置自动勾选 Starling 目标语言",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Starling 目标语言自动勾选",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.mjs",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
