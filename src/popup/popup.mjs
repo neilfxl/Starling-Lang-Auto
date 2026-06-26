@@ -1,4 +1,4 @@
-import { getState, setState, ensureDefaults } from './lib/storage.mjs'
+import { getState, setState, ensureDefaults } from '../lib/storage.mjs'
 
 async function getActiveTabId() {
   const tabs = await chrome.tabs.query({ active: true, currentWindow: true })
@@ -102,7 +102,7 @@ async function applyNow() {
     } catch (e) {
       const msg = String(e?.message ?? e)
       if (msg.includes('Receiving end does not exist')) {
-        await chrome.scripting.executeScript({ target: { tabId }, files: ['contentScript.js'] })
+        await chrome.scripting.executeScript({ target: { tabId }, files: ['src/content-script/contentScript.js'] })
         const resp2 = await chrome.tabs.sendMessage(tabId, payload)
         if (!resp2?.ok) {
           throw new Error(String(resp2?.error || '执行失败'))

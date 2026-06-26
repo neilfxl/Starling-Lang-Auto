@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 
-import { matchRuleForUrl } from '../lib/rules.mjs'
+import { matchRuleForUrl } from '../src/lib/rules.mjs'
 
 test('matchRuleForUrl 按优先级选择匹配规则', () => {
   const rules = [

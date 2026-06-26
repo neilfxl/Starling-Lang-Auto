@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 
-import { normalizeCode, parseLanguageLines } from '../lib/parse.mjs'
+import { normalizeCode, parseLanguageLines } from '../src/lib/parse.mjs'
 
 test('normalizeCode 解析 code 与 [code] 形式', () => {
   assert.equal(normalizeCode('en'), 'en')

@@ -7,17 +7,17 @@
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_title": "Starling 目标语言自动勾选",
-    "default_popup": "popup.html"
+    "default_popup": "src/popup/popup.html"
   },
-  "options_page": "options.html",
+  "options_page": "src/options/options.html",
   "background": {
-    "service_worker": "background.mjs",
+    "service_worker": "src/background/background.mjs",
     "type": "module"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["contentScript.js"],
+      "js": ["src/content-script/contentScript.js"],
       "run_at": "document_idle"
     }
   ]

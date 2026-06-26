@@ -1,6 +1,6 @@
-import { ensureDefaults, getState, setState } from './lib/storage.mjs'
-import { parseLanguageLines } from './lib/parse.mjs'
-import { newId } from './lib/id.mjs'
+import { ensureDefaults, getState, setState } from '../lib/storage.mjs'
+import { parseLanguageLines } from '../lib/parse.mjs'
+import { newId } from '../lib/id.mjs'
 
 function el(tag, attrs = {}, children = []) {
   const node = document.createElement(tag)

@@ -1,4 +1,4 @@
-import { ensureDefaults } from './lib/storage.mjs'
+import { ensureDefaults } from '../lib/storage.mjs'
 
 chrome.runtime.onInstalled.addListener(async () => {
   await ensureDefaults()
@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   }
 
   if (message.type === 'STLA_OPEN_OPTIONS') {
-    const url = chrome.runtime.getURL('options.html')
+    const url = chrome.runtime.getURL('src/options/options.html')
     chrome.runtime
       .openOptionsPage()
       .then(() => sendResponse({ ok: true }))
